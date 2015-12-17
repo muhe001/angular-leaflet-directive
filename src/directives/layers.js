@@ -193,9 +193,9 @@ angular.module('leaflet-directive').directive('layers', function($log, $q, leafl
             }
 
             //refresh heatmap data if present
-            if (newOverlayLayers[newName].visible && map._loaded && newOverlayLayers[newName].data && newOverlayLayers[newName].type === 'heatmap') {
-              leafletLayers.overlays[newName].setData(newOverlayLayers[newName].data);
-              leafletLayers.overlays[newName].update();
+            if (newOverlayLayers[newName].visible && map._loaded && newOverlayLayers[newName].data && newOverlayLayers[newName].type === 'heat') {
+              leafletLayers.overlays[newName].setLatLngs(newOverlayLayers[newName].data);
+              leafletLayers.overlays[newName].redraw();
             }
           }
 
